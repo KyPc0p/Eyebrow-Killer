@@ -34,6 +34,7 @@ struct Katana: View {
             let cubaXPosition = nearLine * 6.6
             let cubaYPosition = middle * 0.985
             
+            
             Path { path in
                 path.move(to: CGPoint(x: nearLine , y: upperBladeYPoint))
                 
@@ -59,11 +60,12 @@ struct Katana: View {
                 .path(in: CGRect(
                     x: cubaXPosition,
                     y: cubaYPosition,
-                    width: width * 0.016,
-                    height: height * 0.1)
+                    width: size * 0.016,
+                    height: size * 0.1)
                 )
                 .rotationEffect(.degrees(7))
         }
+//        .frame(width: 200, height: 200)
     }
 }
 
