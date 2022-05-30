@@ -11,28 +11,62 @@ struct ContentView: View {
     
     @State private var start =  false
     @State private var rotation = 0.0
+    @State private var isKatana = true
+    @State private var throwAngle = 0.0
     
     var body: some View {
-        VStack{
-            HStack {
-                Suriken()
-                    .frame(width: 50, height: 50)
-                    .rotationEffect(.degrees(rotation))
-                    .offset(x: start ? UIScreen.main.bounds.width - 50 : 0)
-                    .animation(.default, value: start)
-                Spacer()
-                
-            }
-            .onTapGesture {
-                if rotation == 360 {
-                    rotation = 0
+        ZStack {
+            Circle().foregroundColor(.pink)
+                .frame(width: 180, height: 180)
+            VStack {
+                Text("TRY TO HIT THE EYEBROW").font(.title).bold()
+                    .padding()
+                VStack{
+                    Spacer()
+                HStack {
+                    if isKatana {
+                    Katana()
+                        .frame(width: 200, height: 200)
+                        .rotationEffect(.degrees(rotation))
+                        .offset(x: start ? UIScreen.main.bounds.width - 200 : 0)
+                        .rotationEffect(.degrees(throwAngle))
+                        // - 5...10
+                        .animation(.default, value: start)
+                    } else {
+                        
+                        
+                        Suriken()
+                            .frame(width: 20, height: 20)
+                            .rotationEffect(.degrees(rotation))
+                            .offset(x: start ? UIScreen.main.bounds.width - 70: 0)
+                            .rotationEffect(.degrees(throwAngle))
+                        //- 5...8
+                            .animation(.default, value: start)
+                    }
+                    Spacer()
+                    
                 }
-                start.toggle()
-                rotation = 360
+                    Spacer()
+                    Text("Trow").font(.title).bold()
+                        .onTapGesture {
+                            if start {
+                                rotation = 0
+                                throwAngle = Double.random(in: -5...7)
+                                start.toggle()
+                            } else {
+                                start.toggle()
+                                rotation = 360
+                            }
+                        }
+                    
+                    Text("Change Weapon").font(.title).bold()
+                        .onTapGesture {
+                            isKatana.toggle()
+                        }
+                }
             }
             
         }
-        
     }
 }
 
@@ -40,7 +74,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .previewInterfaceOrientation(.portrait)
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }
 

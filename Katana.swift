@@ -54,6 +54,7 @@ struct Katana: View {
                     to: CGPoint(x: nearLine, y: upperBladeYPoint),
                     control: CGPoint(x: nearLine - 4, y: middle - 8)
                 )
+                
             }
             
             Ellipse()

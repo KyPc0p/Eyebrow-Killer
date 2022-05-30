@@ -37,18 +37,16 @@ struct Suriken: View {
             }
             .rotationEffect(.degrees(45))
             
-            Path { path in
-                
-                path.addArc(
-                    center: CGPoint(x: middle, y: middle),
-                    radius: radius,
-                    startAngle: .degrees(0),
-                    endAngle: .degrees(360),
-                    clockwise: true
-                )
-            }
-            .colorInvert()
-        
+//            Path { path in
+//
+//                path.addArc(
+//                    center: CGPoint(x: middle, y: middle),
+//                    radius: radius,
+//                    startAngle: .degrees(0),
+//                    endAngle: .degrees(360),
+//                    clockwise: true
+//                )
+//            }
         }
     }
 }
