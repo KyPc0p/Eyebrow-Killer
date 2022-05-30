@@ -9,31 +9,56 @@ import SwiftUI
 
 struct Katana: View {
     var body: some View {
+        
         GeometryReader { geometry in
             let width = geometry.size.width
             let height = geometry.size.height
             let size = min(width, height)
             let middle = size / 2  //175
-            let nearLine = size * 0.1
-            let farLine = size * 0.9
+            
+            let UpperBladeCurvePoint = size * 0.55
+            let BottomBladeCurvePoint = size * 0.58
+            
+            let upperBladeYPoint = middle * 0.94
+            
+            let nearLine = size * 0.04
+            let farLine = size * 0.96
+        
+            let bladeTrailingBottomXSharpPoint = farLine * 0.96
+            let bladeTrailingSharpYPoint = middle * 0.975
+            
+            let bottomBladeXPoint = nearLine * 0.8
+            let bottomSharpYPoint = middle * 1.009
             
             Path { path in
-                path.move(to: CGPoint(x: nearLine - 20, y: middle - 10))
+                path.move(to: CGPoint(x: nearLine , y: upperBladeYPoint))
                 
                 path.addQuadCurve(
-                    to: CGPoint(x: farLine + 20, y: middle - 10),
-                    control: CGPoint(x: middle, y: 190)
+                    to: CGPoint(x: farLine, y: upperBladeYPoint),
+                    control: CGPoint(x: middle, y: UpperBladeCurvePoint)
                 )
                 path.addQuadCurve(
-                    to: CGPoint(x: farLine + 5, y: middle   ),
-                    control: CGPoint(x: farLine + 20, y: middle - 5)
+                    to: CGPoint(x: bladeTrailingBottomXSharpPoint, y: bottomSharpYPoint),
+                    control: CGPoint(x: farLine, y: bladeTrailingSharpYPoint)
                 )
                 path.addQuadCurve(
-                    to: CGPoint(x: nearLine - 22, y: middle ),
-                    control: CGPoint(x: middle , y: 200)
+                    to: CGPoint(x: bottomBladeXPoint, y: middle),
+                    control: CGPoint(x: middle, y: BottomBladeCurvePoint)
                 )
-                
+                path.addQuadCurve(
+                    to: CGPoint(x: nearLine, y: upperBladeYPoint),
+                    control: CGPoint(x: nearLine - 4, y: middle - 8)
+                )
             }
+            
+            Ellipse()
+                .path(in: CGRect(
+                    x: nearLine + 80,
+                    y: middle + 4.5,
+                    width: 6,
+                    height: 30)
+                )
+                .rotationEffect(.degrees(8))
         }
     }
 }
@@ -41,7 +66,7 @@ struct Katana: View {
 struct Katana_Previews: PreviewProvider {
     static var previews: some View {
         Katana()
-            .frame(width: 350, height: 350)
+            .frame(width: 400, height: 400)
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
