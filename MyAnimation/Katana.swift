@@ -14,7 +14,7 @@ struct Katana: View {
             let width = geometry.size.width
             let height = geometry.size.height
             let size = min(width, height)
-            let middle = size / 2  //175
+            let middle = size / 2
             
             let UpperBladeCurvePoint = size * 0.55
             let BottomBladeCurvePoint = size * 0.58
@@ -66,7 +66,6 @@ struct Katana: View {
                 )
                 .rotationEffect(.degrees(7))
         }
-//        .frame(width: 200, height: 200)
     }
 }
 

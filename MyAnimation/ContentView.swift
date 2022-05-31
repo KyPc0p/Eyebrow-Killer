@@ -19,33 +19,30 @@ struct ContentView: View {
             Circle().foregroundColor(.pink)
                 .frame(width: 180, height: 180)
             VStack {
-                Text("TRY TO HIT THE EYEBROW").font(.title).bold()
+                Text("TRY TO HIT THE EYEBROW")
+                    .font(.title)
+                    .bold()
                     .padding()
                 VStack{
                     Spacer()
-                HStack {
-                    if isKatana {
-                    Katana()
-                        .frame(width: 200, height: 200)
-                        .rotationEffect(.degrees(rotation))
-                        .offset(x: start ? UIScreen.main.bounds.width - 200 : 0)
-                        .rotationEffect(.degrees(throwAngle))
-                        // - 5...10
-                        .animation(.default, value: start)
-                    } else {
-                        
-                        
-                        Suriken()
-                            .frame(width: 20, height: 20)
-                            .rotationEffect(.degrees(rotation))
-                            .offset(x: start ? UIScreen.main.bounds.width - 70: 0)
-                            .rotationEffect(.degrees(throwAngle))
-                        //- 5...8
-                            .animation(.default, value: start)
+                    HStack {
+                        if isKatana {
+                            Katana()
+                                .frame(width: 200, height: 200)
+                                .rotationEffect(.degrees(rotation))
+                                .offset(x: start ? UIScreen.main.bounds.width - 200 : 0)
+                                .rotationEffect(.degrees(throwAngle))
+                                .animation(.default, value: start)
+                        } else {
+                            Suriken()
+                                .frame(width: 20, height: 20)
+                                .rotationEffect(.degrees(rotation))
+                                .offset(x: start ? UIScreen.main.bounds.width - 70: 0)
+                                .rotationEffect(.degrees(throwAngle))
+                                .animation(.default, value: start)
+                        }
+                        Spacer()
                     }
-                    Spacer()
-                    
-                }
                     Spacer()
                     Text("Trow").font(.title).bold()
                         .onTapGesture {
@@ -59,7 +56,9 @@ struct ContentView: View {
                             }
                         }
                     
-                    Text("Change Weapon").font(.title).bold()
+                    Text("Change Weapon")
+                        .font(.title)
+                        .bold()
                         .onTapGesture {
                             isKatana.toggle()
                         }
@@ -75,14 +74,5 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
-
-extension AnyTransition {
-    static var itemAnimation: AnyTransition {
-        let insertion = AnyTransition.move(edge: .leading)
-        let removal = AnyTransition.scale
-        
-        return .asymmetric(insertion: insertion, removal: removal)
     }
 }

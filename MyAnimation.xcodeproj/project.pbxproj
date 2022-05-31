@@ -11,9 +11,6 @@
 		7900FBA62844A69100E25C47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FBA52844A69100E25C47 /* ContentView.swift */; };
 		7900FBA82844A69200E25C47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7900FBA72844A69200E25C47 /* Assets.xcassets */; };
 		7900FBAB2844A69200E25C47 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7900FBAA2844A69200E25C47 /* Preview Assets.xcassets */; };
-		7900FBB22844A74000E25C47 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FBB12844A74000E25C47 /* RectangleView.swift */; };
-		7900FBB42844AD3F00E25C47 /* PathExample .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FBB32844AD3F00E25C47 /* PathExample .swift */; };
-		7900FBB62844B4B800E25C47 /* LastEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FBB52844B4B800E25C47 /* LastEx.swift */; };
 		7900FBBB2844EA4100E25C47 /* Katana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FBBA2844EA4100E25C47 /* Katana.swift */; };
 		7900FBBD2845243800E25C47 /* Suriken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FBBC2845243800E25C47 /* Suriken.swift */; };
 /* End PBXBuildFile section */
@@ -24,9 +21,6 @@
 		7900FBA52844A69100E25C47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7900FBA72844A69200E25C47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7900FBAA2844A69200E25C47 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7900FBB12844A74000E25C47 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
-		7900FBB32844AD3F00E25C47 /* PathExample .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PathExample .swift"; sourceTree = "<group>"; };
-		7900FBB52844B4B800E25C47 /* LastEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastEx.swift; sourceTree = "<group>"; };
 		7900FBBA2844EA4100E25C47 /* Katana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Katana.swift; sourceTree = "<group>"; };
 		7900FBBC2845243800E25C47 /* Suriken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suriken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,8 +39,6 @@
 		7900FB972844A69100E25C47 = {
 			isa = PBXGroup;
 			children = (
-				7900FBBA2844EA4100E25C47 /* Katana.swift */,
-				7900FBBC2845243800E25C47 /* Suriken.swift */,
 				7900FBA22844A69100E25C47 /* MyAnimation */,
 				7900FBA12844A69100E25C47 /* Products */,
 			);
@@ -63,10 +55,11 @@
 		7900FBA22844A69100E25C47 /* MyAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				7900FBBA2844EA4100E25C47 /* Katana.swift */,
+				7900FBBC2845243800E25C47 /* Suriken.swift */,
 				7900FBA32844A69100E25C47 /* MyAnimationApp.swift */,
 				7900FBA52844A69100E25C47 /* ContentView.swift */,
 				7900FBA72844A69200E25C47 /* Assets.xcassets */,
-				7900FBB72844DF8200E25C47 /* Lesson */,
 				7900FBA92844A69200E25C47 /* Preview Content */,
 			);
 			path = MyAnimation;
@@ -78,16 +71,6 @@
 				7900FBAA2844A69200E25C47 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		7900FBB72844DF8200E25C47 /* Lesson */ = {
-			isa = PBXGroup;
-			children = (
-				7900FBB52844B4B800E25C47 /* LastEx.swift */,
-				7900FBB12844A74000E25C47 /* RectangleView.swift */,
-				7900FBB32844AD3F00E25C47 /* PathExample .swift */,
-			);
-			path = Lesson;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,13 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7900FBB62844B4B800E25C47 /* LastEx.swift in Sources */,
 				7900FBA62844A69100E25C47 /* ContentView.swift in Sources */,
 				7900FBBD2845243800E25C47 /* Suriken.swift in Sources */,
 				7900FBA42844A69100E25C47 /* MyAnimationApp.swift in Sources */,
 				7900FBBB2844EA4100E25C47 /* Katana.swift in Sources */,
-				7900FBB42844AD3F00E25C47 /* PathExample .swift in Sources */,
-				7900FBB22844A74000E25C47 /* RectangleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

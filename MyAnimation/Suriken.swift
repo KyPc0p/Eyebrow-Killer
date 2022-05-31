@@ -13,11 +13,10 @@ struct Suriken: View {
             let width = geometry.size.width
             let height = geometry.size.height
             let size = min(width, height)
-            let middle = size / 2  //175
+            let middle = size / 2
             let nearLine = size * 0.75
             let farLine = size * 0.25
-            let radius = size * 0.13
-        
+            
             Path { path in
                 path.move(to: CGPoint(x: 0 , y: 0))
                 
@@ -36,17 +35,6 @@ struct Suriken: View {
                 path.addLine(to: CGPoint(x: farLine, y: middle))
             }
             .rotationEffect(.degrees(45))
-            
-//            Path { path in
-//
-//                path.addArc(
-//                    center: CGPoint(x: middle, y: middle),
-//                    radius: radius,
-//                    startAngle: .degrees(0),
-//                    endAngle: .degrees(360),
-//                    clockwise: true
-//                )
-//            }
         }
     }
 }
